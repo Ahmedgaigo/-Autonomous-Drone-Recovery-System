@@ -2,17 +2,18 @@ import socket
 import threading
 import time
 import json
+import random
 
 # Example ground station IP and port
 ground_station_address = ('localhost', 8888)
 
 
-# Example telemetry data (altitude, speed, GPS coordinates)
+# Telemetry data (altitude, speed, GPS coordinates. Simulated for demonstration)
 def getTelemetryData():
-    current_x, current_y = 0, 0  # Replace with actual current position data retrieval
+    current_x, current_y = random.uniform(0, 100), random.uniform(0, 100)  # Simulated coordinates
     return {
-        'altitude': 100,
-        'speed': 10,
+        'altitude': random.uniform(0, 100),
+        'speed': random.uniform(0, 20),
         'coordinates': (current_x, current_y)
     }
 
@@ -50,27 +51,28 @@ def receiveCommands():
                 print(f"Failed to receive commands: {e}")
 
 
-# Event to signal threads to stop
-stop_event = threading.Event()
+if __name__ == "__main__":
+    # Event to signal threads to stop
+    stop_event = threading.Event()
 
-# Start telemetry data sending and command receiving threads
-send_thread = threading.Thread(target=sendTelemetryData)
-receive_thread = threading.Thread(target=receiveCommands)
+    # Start telemetry data sending and command receiving threads
+    send_thread = threading.Thread(target=sendTelemetryData)
+    receive_thread = threading.Thread(target=receiveCommands)
 
-send_thread.start()
-receive_thread.start()
+    send_thread.start()
+    receive_thread.start()
 
-try:
-    while True:
-        time.sleep(0.1)
-except KeyboardInterrupt:
-    print("Shutting down...")
+    try:
+        while True:
+            time.sleep(0.1)
+    except KeyboardInterrupt:
+        print("Shutting down...")
 
-# Signal threads to stop
-stop_event.set()
+    # Signal threads to stop
+    stop_event.set()
 
-# Wait for threads to finish
-send_thread.join()
-receive_thread.join()
+    # Wait for threads to finish
+    send_thread.join()
+    receive_thread.join()
 
-print("Shutdown complete.")
+    print("Shutdown complete.")
