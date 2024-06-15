@@ -8,12 +8,12 @@ target_coordinates = (200, 150)  # Example target coordinates
 
 
 # Calculates Euclidean distance
-def euclidean_distance(p1, p2):
+def euclideanDistance(p1, p2):
     return np.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 
 
 # A* algorithm to compute waypoints
-def a_star(start, goal, waypoints):
+def aStar(start, goal, _waypoints):
     frontier = [(0, start)]
     came_from = {}
     cost_so_far = {start: 0}
@@ -24,11 +24,11 @@ def a_star(start, goal, waypoints):
         if current == goal:
             break
 
-        for nxt in waypoints:
-            new_cost = cost_so_far[current] + euclidean_distance(current, nxt)
+        for nxt in _waypoints:
+            new_cost = cost_so_far[current] + euclideanDistance(current, nxt)
             if nxt not in cost_so_far or new_cost < cost_so_far[nxt]:
                 cost_so_far[nxt] = new_cost
-                priority = new_cost + euclidean_distance(nxt, goal)
+                priority = new_cost + euclideanDistance(nxt, goal)
                 heapq.heappush(frontier, (priority, nxt))
                 came_from[nxt] = current
 
@@ -45,11 +45,11 @@ def a_star(start, goal, waypoints):
 
 
 # Calculates optimal path using A*
-def calculate_optimal_path(start, end, waypoints):
-    return a_star(start, end, waypoints)
+def calculateOptimalPath(start, end, waypoint):
+    return aStar(start, end, waypoint)
 
 
-optimal_path = calculate_optimal_path(waypoints[0], target_coordinates, waypoints)
+optimal_path = calculateOptimalPath(waypoints[0], target_coordinates, waypoints)
 
 # Plotting the trajectory
 x_path, y_path = zip(*optimal_path)
