@@ -37,24 +37,6 @@ This project aims to develop an autonomous system for deploying and recovering a
 - **Testing:** Conduct thorough testing to validate system functionality and performance under various scenarios.
 - **Contribution:** Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
 
-## Contributors
-- John Doe (@johndoe)
-- Jane Smith (@janesmith)
-
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License 
 
-## Acknowledgments
-- Mention any acknowledgments for libraries, frameworks, or resources used.
-
-## Contact
-For inquiries, issues, or collaboration opportunities, please contact [Your Name] via [email](mailto:your_email@example.com).
-
----
-
-### Notes:
-- Customize sections like **Installation and Setup**, **Usage**, and **Contributors** with specific details relevant to your project.
-- Include relevant images, diagrams, or videos if available to illustrate the project's functionality.
-- Update contact information and licensing details as appropriate.
-
-This README provides a clear overview of your project, its features, technologies used, installation instructions, and how others can contribute or get in touch with you. It serves as a valuable document to showcase your project on GitHub and attract collaborators or potential employers. Adjust it further based on your project's specific implementation and requirements.
