@@ -22,7 +22,7 @@ This project aims to develop an autonomous system for deploying and recovering a
    cd autonomous-drone-recovery
    ```
 
-2. **Install Dependencies:** (List any dependencies and how to install them)
+2. **Install Dependencies:** 
    ```bash
    pip install -r requirements.txt
    ```
