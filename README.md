@@ -18,7 +18,7 @@ This project aims to develop an autonomous system for deploying and recovering a
 ## Installation and Setup
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your_username/autonomous-drone-recovery.git
+   git clone https://github.com/Ahmedgaigo/autonomous-drone-recovery.git
    cd autonomous-drone-recovery
    ```
 
